@@ -43,7 +43,7 @@ def predict():
     X_test.shape
     y_test.shape
     from catboost import CatBoostClassifier
-    model=CatBoostClassifier()
+    model=CatBoostClassifier(iterations=500,early_stopping_rounds=20)
     model.fit(X_train_res,y_train_res)
     y_pred=model.predict(X_test)
     
